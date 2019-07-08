@@ -15,6 +15,11 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
+gaps inner 15
+gaps outer 20
+new_window none
+default_border pixel 0
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -144,10 +149,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -165,3 +170,5 @@ bindsym $mod+r mode "resize"
 
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id fcitx -d
+exec --no-startup-id feh --bg-scale ~/Documents/bg.jpg

@@ -3,4 +3,4 @@
 !.gitignore
 !i3/
 !polybar/
-
+!gtk*/
