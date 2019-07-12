@@ -1,0 +1,34 @@
+{
+	"coc.preferences.jumpCommand": "drop",
+	"languageserver": {
+		"ccls": {
+			"command": "ccls",
+			"filetypes": [
+				"c",
+				"cpp",
+				"cuda",
+				"objc",
+				"objcpp"
+			],
+			"rootPatterns": [
+				".ccls",
+				"compile_commands.json"
+			],
+			"initializationOptions": {
+				"cacheDirectory": "/tmp/ccls"
+			}
+		},
+		"rls": {
+			"command": "rls",
+			"filetypes": [
+				"rust"
+			],
+			"rootPatterns": [
+				"Cargo.toml"
+			]
+		}
+	},
+	"javascript.validate.enable": false,
+	"eslint.autoFixOnSave": true,
+	"python.jediEnabled": false
+}
