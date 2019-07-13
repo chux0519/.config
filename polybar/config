@@ -53,7 +53,10 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
-font-3 = FontAwesome:size=10;0
+; ttf-font-awesome
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = bspwm i3
 modules-center = 
@@ -370,14 +373,11 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
