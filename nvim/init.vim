@@ -21,7 +21,7 @@ let mapleader = "\<Space>"
 
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
-set number
+set number relativenumber
 
 " if hidden not set, TextEdit might fail.
 set hidden
