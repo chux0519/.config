@@ -1,6 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
@@ -9,20 +9,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'justinmk/vim-sneak'
 Plug 'Shougo/denite.nvim', { 'commit': '29bfd4c53271c7a150def2388e059746ae4c1713' }
 Plug 'leafgarland/typescript-vim'
 
-
 call plug#end()
-
 " ============================================================================ "
 " ===                           EDITOR SETUP                               === "
 " ============================================================================ "
 set shell=/bin/bash
 let mapleader = "\<Space>"
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 set number relativenumber
 " if hidden not set, TextEdit might fail.
 set hidden
@@ -50,7 +48,7 @@ nnoremap <silent> <C-w>7 7gt
 nnoremap <silent> <C-w>8 8gt
 nnoremap <silent> <C-w>9 9gt
 " fzf.vim
-nnoremap <silent> <C-p> :Files<cr>
+nnoremap <silent> <C-p> :GFiles<cr>
 colorscheme onedark
 " Ctrl+c and Ctrl+j as Esc
 inoremap <C-j> <Esc>
@@ -247,8 +245,25 @@ nmap <silent> ]c <Plug>(ale_next_wrap)
 
 "nnoremap <silent> K :ALEHover<CR>
 "nnoremap <silent> gd :ALEGoToDefinition<CR>
-nmap <silent> L <Plug>(ale_lint)
+nmap <silent> <leader>l <Plug>(ale_lint)
 nmap <silent> <C-l> <Plug>(ale_detail)
 nmap <silent> <C-g> :close<cr>
 
+" =======================================================
+"                   UI
+" =======================================================
 
+let g:lightline = {
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename',
+      \ }
+      \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
