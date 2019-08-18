@@ -217,14 +217,12 @@ let g:ale_rust_rls_config = {
 	\ }
 let g:ale_rust_rls_toolchain = ''
 let g:ale_linters = {
-\   'javascript': ['eslint'],
 \   'python': ['flake8'],
 \   'rust': ['rls']
 \}
 
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
-\   'javascript': ['eslint'],
 \   'python': ['autopep8'],
 \   'rust': ['rls'],
 \}
