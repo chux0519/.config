@@ -6,6 +6,6 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "python.jediEnabled": true,
-  "python.pythonPath": "/Users/chux0519/venv/bin/python"
+  "python.jediEnabled": false,
+  "python.pythonPath": "/home/chux0519/venv/bin/python"
 }
