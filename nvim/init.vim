@@ -32,7 +32,7 @@ set updatetime=300
 set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 " indent
 set foldmethod=indent
 " for switch between tabs
