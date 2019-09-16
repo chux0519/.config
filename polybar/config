@@ -218,6 +218,8 @@ type = internal/mpd
 format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
 label-song =   %title%
 label-offline = 🎜  mpd is offline
+label-song-maxlen = 30
+label-song-ellipsis = true
 
 ; Only applies if <icon-X> is used
 icon-play = ⏵
@@ -277,7 +279,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp0s20f0u10
+interface = wls1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -298,7 +300,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface = enp0s25
 interval = 3.0
 
 format-connected-prefix = " "

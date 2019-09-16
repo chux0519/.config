@@ -227,6 +227,9 @@ let g:ale_fixers = {
 \   'rust': ['rls'],
 \}
 
+" Only run linters named in ale_linters settings.
+let g:ale_linters_explicit = 1
+
 highlight link ALEWarningSign Todo
 highlight link ALEErrorSign WarningMsg
 highlight link ALEVirtualTextWarning Todo
