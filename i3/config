@@ -174,4 +174,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id fcitx -d
 exec --no-startup-id flameshot
 exec --no-startup-id caffeine
+# systemctl --user enable pulseaudio
+exec --no-startup-id pasystray # a tray app for pulseaudio, have to install pulseaudio and pavucontrol
 exec --no-startup-id feh --bg-scale ~/Documents/bg.jpg
