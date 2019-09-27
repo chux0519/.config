@@ -168,6 +168,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Screen brightness controls
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 20; # increase screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 20; # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 exec --no-startup-id mpd
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -175,5 +180,6 @@ exec --no-startup-id fcitx -d
 exec --no-startup-id flameshot
 exec --no-startup-id caffeine
 # systemctl --user enable pulseaudio
-exec --no-startup-id pasystray # a tray app for pulseaudio, have to install pulseaudio and pavucontrol
-exec --no-startup-id feh --bg-scale ~/Documents/bg.jpg
+# a tray app for pulseaudio, have to install pulseaudio and pavucontrol
+exec --no-startup-id pasystray 
+exec --no-startup-id feh --bg-scale ~/Documents/bg.png
