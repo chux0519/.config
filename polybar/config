@@ -55,14 +55,13 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 ; ttf-font-awesome
-font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
-font-6 = "Material Icons:style=Regular"
+font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-4 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-5 = "Material Design Icons:style=Regular"
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = filesystem mpd pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem mpd pulseaudio backlight-acpi memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -142,11 +141,16 @@ enable-scroll = false
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
 
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-default = 
+ws-icon-3 = 4;
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-default = 󰄣
 
 ; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
 ; you must also define a ws-icon-5.
@@ -216,36 +220,38 @@ label-separator-foreground = #ffb52a
 [module/mpd]
 type = internal/mpd
 format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
-label-song =   %title%
-label-offline = 🎜  mpd is offline
+label-song = 䀘 %title%
+label-offline = 䀘 mpd is offline
+label-song-maxlen = 20
+label-song-ellipsis = true
 
 ; Only applies if <icon-X> is used
-icon-play = ⏵
-icon-pause = ⏸
+icon-play = 
+icon-pause = 
 icon-stop = ⏹
-icon-prev = ⏮
-icon-next = ⏭
+icon-prev = 
+icon-next = 
 icon-seekb = ⏪
 icon-seekf = ⏩
-icon-random = 🔀
-icon-repeat = 🔁
-icon-repeatone = 🔂
+icon-random = 
+icon-repeat = 
+icon-repeatone = 
 icon-single = 🔂
 icon-consume = ✀
 
 toggle-on-foreground = #ff
 toggle-off-foreground = #55
-bar-progress-width = 5
-bar-progress-indicator = |
+bar-progress-width = 4
+bar-progress-indicator = 
 bar-progress-fill = ─
 bar-progress-empty = ─
 [module/xbacklight]
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = ﰦ %percentage%%
 
-bar-width = 10
+bar-width = 5
 bar-indicator = |
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
@@ -330,13 +336,13 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = 󰅋 %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 5
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
