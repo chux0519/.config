@@ -7,5 +7,6 @@
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "python.jediEnabled": false,
-  "python.pythonPath": "/opt/miniconda3/bin/python"
+  "python.pythonPath": "/opt/miniconda3/bin/python",
+  "tslint.autoFixOnSave": true
 }
