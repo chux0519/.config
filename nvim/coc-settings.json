@@ -9,5 +9,17 @@
   "python.jediEnabled": false,
   "python.pythonPath": "/opt/miniconda3/bin/python",
   "tslint.autoFixOnSave": true,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+         "cache": {
+           "directory": ".ccls-cache"
+         }
+       }
+    }
+  }
 }
