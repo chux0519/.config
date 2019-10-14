@@ -15,8 +15,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
-gaps inner 15
-gaps outer 15
+gaps inner 5
+gaps outer 5
 new_window none
 default_border pixel 2
 
@@ -303,6 +303,9 @@ mode "$mode_gaps_left" {
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 20; # decrease screen brightness
 bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+
+# flameshot: control + alt + a
+bindsym Mod1+Ctrl+a exec flameshot gui
 
 exec --no-startup-id mpd
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
