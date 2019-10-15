@@ -1,7 +1,7 @@
 {
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "javascript", "typescript", "typescriptreact", "json", "javascriptreact", "python"],
+  "coc.preferences.formatOnSaveFiletypes": ["cpp", "rust", "javascript", "typescript", "typescriptreact", "json", "javascriptreact", "python"],
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
