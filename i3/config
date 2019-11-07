@@ -134,6 +134,13 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output primary
+workspace $ws6 output primary
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -168,10 +175,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# flameshot: control + alt + a
+bindsym Mod1+Ctrl+a exec flameshot gui
 
 exec --no-startup-id mpd
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id fcitx -d
 exec --no-startup-id flameshot
 exec --no-startup-id caffeine
+# systemctl --user enable pulseaudio
+# a tray app for pulseaudio, have to install pulseaudio and pavucontrol
+exec --no-startup-id pasystray 
 exec --no-startup-id feh --bg-scale ~/Documents/bg.jpg

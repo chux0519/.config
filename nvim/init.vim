@@ -235,12 +235,12 @@ highlight link ALEErrorSign WarningMsg
 highlight link ALEVirtualTextWarning Todo
 highlight link ALEVirtualTextInfo Todo
 highlight link ALEVirtualTextError WarningMsg
-highlight ALEError guibg=None
-highlight ALEWarning guibg=None
-let g:ale_sign_error = "✖"
-let g:ale_sign_warning = "⚠"
-let g:ale_sign_info = "i"
-let g:ale_sign_hint = "➤"
+"highlight ALEError guibg=None
+"highlight ALEWarning guibg=None
+"let g:ale_sign_error = "✖"
+"let g:ale_sign_warning = "⚠"
+"let g:ale_sign_info = "i"
+"let g:ale_sign_hint = "➤"
 nmap <silent> [c <Plug>(ale_previous_wrap)
 nmap <silent> ]c <Plug>(ale_next_wrap)
 
