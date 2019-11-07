@@ -186,4 +186,4 @@ exec --no-startup-id caffeine
 # systemctl --user enable pulseaudio
 # a tray app for pulseaudio, have to install pulseaudio and pavucontrol
 exec --no-startup-id pasystray 
-exec --no-startup-id feh --bg-scale ~/Documents/bg.jpg
+exec --no-startup-id feh --bg-fill ~/Documents/bg.jpg

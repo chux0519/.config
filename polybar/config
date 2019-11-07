@@ -28,7 +28,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/theme]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:LVDS-1}
 bottom = true
 width = 100%
 height = 27
