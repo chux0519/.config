@@ -28,7 +28,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/theme]
-monitor = ${env:MONITOR:LVDS-1}
+monitor = ${env:MONITOR:HDMI-1}
 bottom = true
 width = 100%
 height = 27
@@ -62,7 +62,7 @@ font-6 = "Material Icons:style=Regular"
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = filesystem mpd pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem mpd pulseaudio memory cpu wlan eth temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -278,7 +278,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wls1
+interface = wlp0s20f0u10
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>

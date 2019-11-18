@@ -1,11 +1,11 @@
 {
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "javascript", "typescript", "typescriptreact", "json", "javascriptreact", "python"],
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "javascript", "typescript", "typescriptreact", "json", "javascriptreact", "python", "css", "markdown"],
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "python.jediEnabled": false,
-  "python.pythonPath": "/home/chux0519/miniconda3/bin/python"
+  "python.pythonPath": "/home/chux0519/anaconda3/bin/python"
 }

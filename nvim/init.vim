@@ -12,6 +12,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'Shougo/denite.nvim', { 'commit': '29bfd4c53271c7a150def2388e059746ae4c1713' }
 Plug 'leafgarland/typescript-vim'
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 " ============================================================================ "
@@ -35,6 +36,14 @@ set signcolumn=yes
 set clipboard+=unnamedplus
 " indent
 set foldmethod=indent
+" On pressing tab, insert 2 spaces
+set expandtab
+" show existing tab with 2 spaces width
+set tabstop=2
+set softtabstop=2
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
+
 " for switch between tabs
 nnoremap <silent> <C-w>p gT
 nnoremap <silent> <C-w>n gt
@@ -164,6 +173,8 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 function! s:check_back_space() abort
   let col = col('.') - 1
