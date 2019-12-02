@@ -35,5 +35,9 @@ bspc rule -a Screenkey manage=off
 # pgrep -x panel > /dev/null || panel &
 
 # polybar
-
 $HOME/.config/polybar/launch.sh &
+
+
+# picom
+
+$HOME/.config/picom/launch.sh &
