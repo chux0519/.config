@@ -176,7 +176,7 @@ label-mode-background = #e60053
 label-focused = %icon%
 label-focused-foreground = #ffffff
 label-focused-background = #3f3f3f
-label-focused-underline = #04a
+label-focused-underline = 
 label-focused-padding = 4
 
 ; Available tokens:
@@ -339,7 +339,7 @@ label-volume-foreground = ${root.foreground}
 label-muted = 🔇 muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 4
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
