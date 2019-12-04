@@ -1,0 +1,21 @@
+#!/bin/sh
+remains=$(acpiconf -i 0 | grep "Remaining capacity" | awk '{print $3}' | sed -e 's/%//')
+
+if [ $remains -ge 90 ]; then
+  echo " $remains%"
+else
+  if [ $remains -ge 75 ]; then
+    echo " $remains%"
+  else
+    if [ $remains -ge 50 ]; then
+      echo " $remains%"
+    else
+      if [ $remains -ge 25 ]; then
+        echo " $remains%"
+      else
+        echo " $remains%"
+      fi
+    fi
+  fi
+fi
+

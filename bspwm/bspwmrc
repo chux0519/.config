@@ -41,3 +41,9 @@ $HOME/.config/polybar/launch.sh &
 # picom
 
 $HOME/.config/picom/launch.sh &
+
+# urxvt
+xrdb -load $HOME/.Xresources
+
+# background
+feh --bg-scale $HOME/Documents/bg.jpg

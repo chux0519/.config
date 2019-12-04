@@ -32,7 +32,7 @@ alert = #bd2c40
 monitor = ${env:MONITOR:LVDS-1}
 top = true
 width = 100%
-height = 27
+height = 24
 ;offset-x = 1%
 ;offset-y = 1%
 fixed-center = false
@@ -60,7 +60,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = date 
+modules-right = wlan battery date 
 
 tray-position = right
 tray-padding = 2
@@ -122,136 +122,6 @@ label-empty-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-[module/i3]
-type = internal/i3
-pin-workspace = true
-strip-wsnumbers = true
-enable-scroll = false
-; Separator in between workspaces
-; label-separator = |
-; ws-icon-[0-9]+ = label;icon
-; NOTE: The label needs to match the name of the i3 workspace
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-default = 
-
-; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
-; you must also define a ws-icon-5.
-
-; Available tags:
-;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
-;   <label-mode> (default)
-
-; Available tags:
-;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
-;   <label-mode> (default)
-
-; Available tokens:
-;   %mode%
-; Default: %mode%
-label-mode = %mode%
-label-mode-padding = 2
-label-mode-background = #e60053
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-label-focused = %icon%
-label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
-label-focused-underline = #fba922
-label-focused-padding = 4
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-label-unfocused = %icon%
-label-unfocused-padding = 4
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-label-visible = %icon%
-label-visible-underline = #555555
-label-visible-padding = 4
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-label-urgent = %index%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-padding = 4
-
-; Separator in between workspaces
-label-separator-padding = 2
-label-separator-foreground = #ffb52a
-
-
-[module/mpd]
-type = internal/mpd
-format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
-label-song =   %title%
-label-offline = 🎜  mpd is offline
-label-song-maxlen = 30
-label-song-ellipsis = true
-
-; Only applies if <icon-X> is used
-icon-play = ⏵
-icon-pause = ⏸
-icon-stop = ⏹
-icon-prev = ⏮
-icon-next = ⏭
-icon-seekb = ⏪
-icon-seekf = ⏩
-icon-random = 
-icon-repeat = 
-icon-repeatone = 
-icon-single = 🔂
-icon-consume = ✀
-
-toggle-on-foreground = #ff
-toggle-off-foreground = #55
-bar-progress-width = 5
-bar-progress-indicator = |
-bar-progress-fill = ─
-bar-progress-empty = ─
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -267,25 +137,11 @@ format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 
 [module/wlan]
-type = internal/network
-interface = wls1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+type = custom/script
+# custom script in ~/.config/script
+exec = polybar_wifi
+interval = 10
+format =  <label>
 
 [module/eth]
 type = internal/network
@@ -313,7 +169,6 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
 
 label = %date% %time%
 
@@ -373,34 +228,12 @@ bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-
-format-discharging = <animation-discharging> <label-discharging>
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+type = custom/script
+# custom script in ~/.config/script
+exec = polybar_battery
+interval = 10
+format = <label>
+click-left = echo "test"
 
 [module/temperature]
 type = internal/temperature
