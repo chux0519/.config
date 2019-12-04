@@ -175,6 +175,7 @@ bindsym $mod+r mode "resize"
 
 # flameshot: control + alt + a
 bindsym Mod1+Ctrl+a exec flameshot gui
+bindsym Mod1+Ctrl+l exec i3lock -i ~/Documents/images/lockscreen.png  -t
 
 exec --no-startup-id mpd
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -186,5 +187,5 @@ exec --no-startup-id caffeine
 exec --no-startup-id pasystray 
 # blueman
 exec --no-startup-id blueman-tray
-exec --no-startup-id feh --bg-fill ~/Documents/bg.jpg
+exec --no-startup-id feh --bg-fill ~/Documents/images/bg.jpg
 exec_always --no-startup-id picom --config ~/.config/picom/config

@@ -29,9 +29,9 @@ alert = #bd2c40
 
 [bar/theme]
 monitor = ${env:MONITOR:HDMI-1}
-bottom = true
+top = true
 width = 100%
-height = 27
+height = 32
 ;offset-x = 1%
 ;offset-y = 1%
 fixed-center = false
@@ -51,17 +51,17 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = fixed:pixelsize=12;1
+font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-2 = siji:pixelsize=12;1
 ; ttf-font-awesome
 font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
-font-6 = "Material Icons:style=Regular"
+font-6 = "Material Icons:style=Regular:pixelsize=10"
 
 modules-left = bspwm i3
-modules-center = 
+modules-center = xwindow
 modules-right = filesystem mpd pulseaudio memory cpu wlan eth temperature date powermenu
 
 tray-position = right
