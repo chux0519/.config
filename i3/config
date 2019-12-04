@@ -187,3 +187,4 @@ exec --no-startup-id pasystray
 # blueman
 exec --no-startup-id blueman-tray
 exec --no-startup-id feh --bg-fill ~/Documents/bg.jpg
+exec_always --no-startup-id picom --config ~/.config/picom/config
