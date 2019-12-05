@@ -46,4 +46,7 @@ $HOME/.config/picom/launch.sh &
 xrdb -load $HOME/.Xresources
 
 # background
-feh --bg-scale $HOME/Documents/bg.jpg
+feh --bg-scale $HOME/Documents/images/bg.jpg
+
+# exec caffeine
+killall caffeine || caffeine &

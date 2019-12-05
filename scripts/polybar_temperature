@@ -1,0 +1,5 @@
+#!/bin/sh
+
+msg=$(sysctl dev.cpu | grep temperature | awk 'BEGIN{n=0;s=0;};//{n=n+1;s=s + int($2);};END{print s/n;}')
+
+echo "$msg"

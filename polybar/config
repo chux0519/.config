@@ -60,7 +60,7 @@ font-3 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = wlan battery date 
+modules-right = temperature wlan battery date 
 
 tray-position = right
 tray-padding = 2
@@ -233,24 +233,15 @@ type = custom/script
 exec = polybar_battery
 interval = 10
 format = <label>
-click-left = echo "test"
 
 [module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+type = custom/script
+# custom script in ~/.config/script
+exec = polybar_temperature
+interval = 10
+format =  <label>
 
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
 
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
