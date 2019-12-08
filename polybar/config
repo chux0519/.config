@@ -29,7 +29,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/theme]
-monitor = ${env:MONITOR:LVDS-1}
+monitor = ${env:MONITOR:}
 ;bottom = true
 top = true
 width = 100%
