@@ -18,8 +18,15 @@ font pango:monospace 8
 gaps inner 10
 gaps outer 10
 # for browser
+workspace "1" gaps outer 0
+workspace "1" gaps inner 0
 workspace "2" gaps outer 0
 workspace "2" gaps inner 0
+workspace "6" gaps outer 0
+workspace "6" gaps inner 0
+workspace "7" gaps outer 0
+workspace "7" gaps inner 0
+
 new_window none
 default_border pixel 0
 
