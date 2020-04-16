@@ -12,6 +12,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'Shougo/denite.nvim', { 'commit': '29bfd4c53271c7a150def2388e059746ae4c1713' }
 Plug 'leafgarland/typescript-vim'
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 " ============================================================================ "

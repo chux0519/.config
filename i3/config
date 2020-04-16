@@ -95,6 +95,8 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+for_window [title="MainWindow"] floating enable
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
