@@ -207,6 +207,7 @@ exec --no-startup-id caffeine
 # a tray app for pulseaudio, have to install pulseaudio and pavucontrol
 # exec --no-startup-id pasystray 
 exec_always --no-startup-id nm-applet --no-agent
+exec_always --no-startup-id dunst
 # blueman
 exec --no-startup-id blueman-tray
 exec --no-startup-id feh --bg-fill ~/Documents/images/bg.jpg
