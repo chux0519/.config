@@ -173,6 +173,27 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+# move floating windows with keys
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    bindsym h     move left
+    bindsym j     move down
+    bindsym k     move up
+    bindsym l     move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 # flameshot: control + alt + a
 bindsym Mod1+Ctrl+a exec flameshot gui
 bindsym Mod1+Ctrl+l exec i3lock -i ~/Documents/images/lockscreen.png  -t
@@ -184,8 +205,9 @@ exec --no-startup-id flameshot
 exec --no-startup-id caffeine
 # systemctl --user enable pulseaudio
 # a tray app for pulseaudio, have to install pulseaudio and pavucontrol
-exec --no-startup-id pasystray 
+# exec --no-startup-id pasystray 
+exec_always --no-startup-id nm-applet --no-agent
 # blueman
 exec --no-startup-id blueman-tray
 exec --no-startup-id feh --bg-fill ~/Documents/images/bg.jpg
-exec_always --no-startup-id picom --config ~/.config/picom/config
+# exec_always --no-startup-id picom --config ~/.config/picom/config
