@@ -210,5 +210,5 @@ exec_always --no-startup-id nm-applet --no-agent
 exec_always --no-startup-id dunst
 # blueman
 exec --no-startup-id blueman-tray
-exec --no-startup-id feh --bg-fill ~/Documents/images/bg.jpg
+exec_always --no-startup-id feh --bg-fill ~/Documents/images/bg.jpg
 # exec_always --no-startup-id picom --config ~/.config/picom/config
