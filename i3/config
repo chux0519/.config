@@ -200,9 +200,11 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id fcitx -d
 exec --no-startup-id flameshot
 exec --no-startup-id caffeine
+exec --no-startup-id dunst
 # systemctl --user enable pulseaudio
 # a tray app for pulseaudio, have to install pulseaudio and pavucontrol
 # exec --no-startup-id pasystray 
 exec_always --no-startup-id nm-applet --no-agent
+exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id feh --bg-fill ~/Documents/images/bg.jpg
 exec_always --no-startup-id picom --config ~/.config/picom/config
