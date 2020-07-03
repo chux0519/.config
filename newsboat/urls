@@ -1,10 +1,13 @@
-https://www.archlinux.org/feeds/news/ "tech"
+https://www.archlinux.org/feeds/news/ "tech news"
 https://www.solidot.org/index.rss "news"
 http://feeds.feedburner.com/zhihu-daily "news"
-https://sspai.com/feed "tech"
+https://sspai.com/feed "tech news"
 https://www.reddit.com/r/rust/.rss "rust"
 
--- github
-https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml
-https://mshibanami.github.io/GitHubTrendingRSS/daily/c.xml
-https://mshibanami.github.io/GitHubTrendingRSS/daily/c++.xml
+https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml "github"
+https://mshibanami.github.io/GitHubTrendingRSS/daily/c.xml "github"
+https://mshibanami.github.io/GitHubTrendingRSS/daily/c++.xml "github"
+
+
+http://maskray.me/blog/atom.xml "blog"
+https://stjepang.github.io/feed.xml "blog"
