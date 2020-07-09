@@ -227,13 +227,13 @@ let g:ale_rust_rls_config = {
 let g:ale_rust_rls_toolchain = ''
 let g:ale_linters = {
 \   'python': ['flake8'],
-\   'rust': ['rls']
+\   'rust': ['rust-analyzer']
 \}
 
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
 \   'python': ['autopep8'],
-\   'rust': ['rls'],
+\   'rust': ['rust-analyzer'],
 \}
 
 " Only run linters named in ale_linters settings.
