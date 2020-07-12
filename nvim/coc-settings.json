@@ -1,11 +1,12 @@
 {
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "javascript", "typescript", "typescriptreact", "json", "javascriptreact", "python"],
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "javascript", "typescript", "typescriptreact", "json", "javascriptreact", "python", "cpp", "c"],
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "python.jediEnabled": true,
-  "python.pythonPath": "/Users/chux0519/venv/bin/python"
+  "python.pythonPath": "/anaconda3/bin/python",
+  "rust-analyzer.serverPath": "/usr/local/bin/rust-analyzer"
 }

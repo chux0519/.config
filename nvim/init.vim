@@ -12,6 +12,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'Shougo/denite.nvim', { 'commit': '29bfd4c53271c7a150def2388e059746ae4c1713' }
 Plug 'leafgarland/typescript-vim'
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 " ============================================================================ "
@@ -73,6 +74,9 @@ nnoremap <right> :bn<CR>
 nnoremap j gj
 nnoremap k gk
 
+" command ClangFormat ! clang-format -i %:t
+
+" nmap <Leader>f :ClangFormat<CR>
 
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
@@ -156,6 +160,8 @@ nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
 " === nerdtree setup ===
 nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
 
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
+
 " === Coc.vim ===
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -218,13 +224,13 @@ let g:ale_rust_rls_config = {
 let g:ale_rust_rls_toolchain = ''
 let g:ale_linters = {
 \   'python': ['flake8'],
-\   'rust': ['rls']
+\   'rust': ['rust-analyzer']
 \}
 
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
 \   'python': ['autopep8'],
-\   'rust': ['rls'],
+\   'rust': ['rust-analyzer'],
 \}
 
 highlight link ALEWarningSign Todo
