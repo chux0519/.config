@@ -1,6 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim',{'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
@@ -10,8 +10,9 @@ Plug 'mattn/emmet-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'Shougo/denite.nvim', { 'commit': '29bfd4c53271c7a150def2388e059746ae4c1713' }
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'leafgarland/typescript-vim'
+Plug 'tpope/vim-fugitive'
 Plug 'jceb/vim-orgmode'
 
 call plug#end()
@@ -33,9 +34,17 @@ set updatetime=300
 set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 " indent
 set foldmethod=indent
+" On pressing tab, insert 2 spaces
+set expandtab
+" show existing tab with 2 spaces width
+set tabstop=2
+set softtabstop=2
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
+
 " for switch between tabs
 nnoremap <silent> <C-w>p gT
 nnoremap <silent> <C-w>n gt
@@ -74,9 +83,6 @@ nnoremap <right> :bn<CR>
 nnoremap j gj
 nnoremap k gk
 
-" command ClangFormat ! clang-format -i %:t
-
-" nmap <Leader>f :ClangFormat<CR>
 
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
@@ -112,37 +118,6 @@ call denite#custom#var('grep', 'final_opts', [])
 " Remove date from buffer list
 call denite#custom#var('buffer', 'date_format', '')
 
-" Open file commands
-call denite#custom#map('insert,normal', "<C-t>", '<denite:do_action:tabopen>')
-call denite#custom#map('insert,normal', "<C-v>", '<denite:do_action:vsplit>')
-call denite#custom#map('insert,normal', "<C-h>", '<denite:do_action:split>')
-
-" Custom options for Denite
-"   auto_resize             - Auto resize the Denite window height automatically.
-"   prompt                  - Customize denite prompt
-"   direction               - Specify Denite window direction as directly below current pane
-"   winminheight            - Specify min height for Denite window
-"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
-"   prompt_highlight        - Specify color of prompt
-"   highlight_matched_char  - Matched characters highlight
-"   highlight_matched_range - matched range highlight
-let s:denite_options = {'default' : {
-\ 'auto_resize': 1,
-\ 'prompt': 'λ:',
-\ 'direction': 'rightbelow',
-\ 'winminheight': '10',
-\ }}
-
-" Loop through denite options and enable them
-function! s:profile(opts) abort
-  for l:fname in keys(a:opts)
-    for l:dopt in keys(a:opts[l:fname])
-      call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
-    endfor
-  endfor
-endfunction
-
-call s:profile(s:denite_options)
 catch
   echo 'Denite not installed. It should work after running :PlugInstall'
 endtry
@@ -157,10 +132,30 @@ nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
 
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> <C-t>
+  \ denite#do_map('do_action', 'tabopen')
+  nnoremap <silent><buffer><expr> <C-v>
+  \ denite#do_map('do_action', 'vsplit')
+  nnoremap <silent><buffer><expr> <C-h>
+  \ denite#do_map('do_action', 'split')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+
 " === nerdtree setup ===
 nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
-
-nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 " === Coc.vim ===
 " Use tab for trigger completion with characters ahead and navigate.
@@ -214,14 +209,6 @@ let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_save = 0
 let g:ale_lint_on_enter = 0
 let g:ale_virtualtext_cursor = 1
-let g:ale_rust_rls_config = {
-	\ 'rust': {
-		\ 'all_targets': 1,
-		\ 'build_on_save': 1,
-		\ 'clippy_preference': 'on'
-	\ }
-	\ }
-let g:ale_rust_rls_toolchain = ''
 let g:ale_linters = {
 \   'python': ['flake8'],
 \   'rust': ['rust-analyzer']

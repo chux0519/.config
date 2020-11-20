@@ -7,6 +7,6 @@
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "python.jediEnabled": true,
-  "python.pythonPath": "/anaconda3/bin/python",
+  "python.pythonPath": "/Users/chux0519/miniconda3/bin/python",
   "rust-analyzer.serverPath": "/usr/local/bin/rust-analyzer"
 }
